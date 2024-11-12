@@ -1,13 +1,61 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <title>RelativityOne Staging Explorer Login</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Roboto:wght@300;400;500;700" />
+    <link rel="icon" type="image/svg" sizes="32x32" href="img/rel_logo.svg" />
+    <link rel="stylesheet" href="css/style.css?v=1" />
+    <title>RelativityOne Staging Explorer</title>
 </head>
+
 <body>
-<div style="display:flex; justify-content: center">
-    TO DO
-</div>
+    <script src="script/script.js" defer></script>
+    <iframe class="hidden" id="hiddenIframe"></iframe>
+    <div class="container">
+        <div id="in-progress" class="hidden container">
+            <div class="image-container">
+                <span id="spinner" class="rwa-loading-spinner ${larger ? 'larger' : ''}"></span>
+                <img src="img/loading.jpg" alt="status" class="connection-status" />
+            </div>
+            <h1 class="heading-primary">Logging in to ROSE...</h1>
+            <h2 class="heading-secondary">
+                Please wait...
+            </h2>
+        </div>
+        <div id="not-started" class="hidden container">
+            <img src="img/rel_logo.svg" alt="logo" />
+            <h1 class="heading-primary">Complete the log in process to RelativityOne Staging Explorer (ROSE)</h1>
+            <h2 class="heading-secondary">
+                1. Click the button below<br/><br/>
+                <button type="submit" class="button-primary" onclick="sendCodeToRose()">Complete activation</button>
+            </h2>
+            <h2 class="heading-secondary">
+                2. Go back to ROSE and check if it has loaded properly <br/>
+                (Please note that loading the data may take a while)
+            </h2>
+            <h2 class="heading-secondary">3. If the application has successfully loaded, you may close this window.</h2>
+        </div>
+        <div id="success" class="hidden container">
+            <img src="img/success.svg" alt="status" class="connection-status" />
+            <h1 class="heading-primary">Login successfully completed</h1>
+            <h2 class="heading-secondary">
+                You can close this window and continue using RelativityOne Staging Explorer. <br />
+                (It may take a while before it loads.)
+            </h2>
+        </div>
+        <div id="error" class="hidden container">
+            <img src="img/error.svg" alt="status" class="connection-status" /> <br/>
+            <h1 class="heading-primary">We couldn't sign you in</h1>
+            <h2 class="heading-secondary">
+                Something went wrong during the authentication process. <br />
+                Please go back to ROSE and try to log in again. <br/><br/>
+                If the problem persists, please contact your system administrator.
+            </h2>
+        </div>
+    </div>
 </body>
+
 </html>

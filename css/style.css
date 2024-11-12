@@ -1,0 +1,153 @@
+/* 
+** COLOR PALETTE: 
+Buttons:
+Active: #0075E0
+Focus, Hover: #0670C1
+
+Background:#ffff
+
+Text prmiary: #3f444c
+Text secondary:#43484f
+
+** FONT SIZE:
+1.6rem
+1.4rem
+
+** BOX-SHADOW:
+0px 3px 4px 0px rgba(99, 107, 127, 0.1);
+*/
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #ffff;
+}
+
+a {
+    color: #0075e0;
+}
+
+/* HEADER */
+
+.logo-header {
+    height: 1.6rem;
+}
+
+.page-header {
+    background-color: #ffff;
+    padding: 1rem 0.8rem;
+    box-shadow: 0px 3px 4px 0px rgba(99, 107, 127, 0.14);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    height: 4rem;
+    padding-left: 3.2rem;
+}
+
+/* MAIN SECTION */
+
+.container {
+    margin: 3.2rem 1.6rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.logo-gif img {
+    height: 7.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.heading-primary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: #3f444c;
+}
+
+.heading-secondary {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.8rem;
+    color: #43484f;
+    margin-bottom: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+.button-primary {
+    font-weight: 400;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    background-color: #0075e0;
+    color: #ffff;
+    font-size: 1.4rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .button-primary:hover,
+    .button-primary:focus {
+        background-color: #0670c1;
+        box-shadow: 0px 3px 4px 0px rgba(99, 107, 127, 0.14);
+    }
+
+.hidden {
+    display: none;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.connection-status {
+    height: 150px;
+}
+
+.hint {
+    color: grey;
+    font-size: 0.7rem;
+}
+
+.rwa-loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10px, -12px);
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.rwa-loading-spinner:before {
+    animation: spinner 0.75s linear infinite;
+    border: 2px solid #acbfd6;
+    border-radius: 50%;
+    border-top-color: #0075e0;
+    box-sizing: border-box;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+
+.rwa-loading-spinner.larger:before {
+    height: 20px;
+    width: 20px;
+}
