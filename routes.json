@@ -3,10 +3,6 @@
     {
       "route": "/",
       "rewrite": "/index.html"
-    },
-    {
-      "route": "/authenticate",
-      "rewrite": "/authenticate.html"
     }
   ]
 }
