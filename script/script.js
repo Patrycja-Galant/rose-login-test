@@ -45,10 +45,8 @@ function sendCodeToRose() {
 
 function authenticateViaLocalhost() {
     try {
-        localHttpRequest("GET", "version")
-            .then(response => console.log("version", response));
-
-        localHttpRequest("GET", `auth?client_id=${clientId}&code=${code ?? ''}&error=${error ?? ''}`)
+        console.log(code);
+        localHttpRequest("GET", `authenticate?client_id=${clientId}&code=${code ?? ''}&error=${error ?? ''}`)
             .then(response => {
                 console.log("auth result", response);
 
@@ -76,6 +74,6 @@ function localHttpRequest(requestType, endpoint, data = null, timeoutInMilliseco
             method: requestType,
             body: data
         },
-        timeoutInMilliseconds
+        { signal: AbortSignal.timeout(timeoutInMilliseconds) }
     ).then(response => response.json());
 }
